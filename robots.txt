@@ -19,4 +19,4 @@ Allow: /
 Disallow: /admin/
 Disallow: /api/
 
-Sitemap: https://quillmatick.github.io/geopolitics/geopolitics/sitemap.xml
+Sitemap: https://quillmatick.github.io/geopolitics/sitemap.xml
