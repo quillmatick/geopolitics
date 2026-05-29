@@ -348,7 +348,9 @@
               if (data.data && data.data.length > 0) {
                 dropdown.innerHTML = data.data.slice(0, 5).map(post => {
                   const readTime = Math.ceil((post.word_count || 1000) / 250);
-                  return '<a href="/blog/' + post.slug + '" class="search-dropdown-item">' +
+                  const cat = post.category || 'tech';
+                  const catPath = cat === 'geopolitics' ? '/geopolitics' : '/tech';
+                  return '<a href="' + catPath + '/' + post.slug + '" class="search-dropdown-item">' +
                     '<h4>' + post.title + '</h4>' +
                     '<p>' + readTime + ' min read • ' + post.meta_description + '</p>' +
                     '</a>';
@@ -422,7 +424,7 @@
               ticker.innerHTML = data.tags.map(tag => {
                 const displayName = tag.name.startsWith('#') ? tag.name : '#' + tag.name;
                 const queryVal = tag.name.startsWith('#') ? tag.name.slice(1) : tag.name;
-                return '<a href="/blog/search.html?q=' + encodeURIComponent(queryVal) + '" class="ticker-item" data-tag="' + queryVal + '">' + displayName + '</a>';
+                return '<a href="/tech/search.html?q=' + encodeURIComponent(queryVal) + '" class="ticker-item" data-tag="' + queryVal + '">' + displayName + '</a>';
               }).join('');
               
               // Re-bind dynamic handlers for search updates
