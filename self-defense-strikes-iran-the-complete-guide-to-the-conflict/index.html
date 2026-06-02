@@ -101,47 +101,50 @@
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
   
-  <header class="site-header">
-    <div class="header-main">
-      <div class="header-left">
-        <a href="/" class="logo">Quill<span>matick</span></a>
-        <nav class="header-nav">
-          <a href="/tech" class="">Tech</a>
-          <a href="/geopolitics" class="active">Geopolitics</a>
-          <a href="/geopolitics">AI Digest</a>
-          <a href="/geopolitics">Archive</a>
-        </nav>
-      </div>
-      <div class="header-right">
-        <button class="icon-btn search-btn" aria-label="Search">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+  <!-- ─── Navbar ─── -->
+  <div class="navbar">
+    <div class="navbar-inner">
+      <a href="/" class="logo">Quillmatick<span>.</span><i class="logo-dot"></i></a>
+      <ul class="nav-links">
+        <li><a href="/tech" class="">Tech</a></li>
+        <li><a href="/geopolitics" class="active">Geopolitics</a></li>
+        <li><a href="/geopolitics/ai-digest">AI Digest</a></li>
+        <li><a href="/geopolitics/archive">Archive</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-icon-btn search-btn" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
         </button>
-        <button class="icon-btn" aria-label="Notifications">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+        <button id="theme-btn" class="nav-icon-btn theme-toggle" aria-label="Toggle theme">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
         </button>
-        <button id="theme-btn" class="icon-btn theme-toggle" aria-label="Toggle theme">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-        </button>
+        <button class="nav-subscribe">Subscribe</button>
       </div>
     </div>
-    <div class="trending-bar">
-      <span class="trending-label">LIVE FEED</span>
-      <div class="ticker-wrap">
-        <div class="ticker" id="trending-ticker">
+  </div>
+
+  <!-- ─── Live Ticker ─── -->
+  <div class="ticker">
+    <div class="ticker-inner container">
+      <div class="ticker-label">LIVE FEED</div>
+      <div class="ticker-track">
+        <div class="ticker-scroll" id="trending-ticker">
           <span class="ticker-item">ity2026</span>
           <span class="ticker-item text-white">Apple zero-day exploit patched with Anthropic</span>
-          <a href="/geopolitics/search.html?q=GenerativeAI" class="ticker-item highlight" data-tag="GenerativeAI">#GenerativeAI</a>
+          <a href="/geopolitics/search.html?q=GenerativeAI" class="ticker-item highlight" data-tag="GenerativeAI"><span class="tag">#GenerativeAI</span></a>
           <span class="ticker-item text-white">Warren proposes AI tax for the people</span>
-          <a href="/geopolitics/search.html?q=MachineLearning" class="ticker-item highlight" data-tag="MachineLearning">#MachineLearning</a>
+          <a href="/geopolitics/search.html?q=MachineLearning" class="ticker-item highlight" data-tag="MachineLearning"><span class="tag">#MachineLearning</span></a>
         </div>
       </div>
     </div>
-    <div class="category-pills">
-      <div class="category-pills-inner">
-        <a href="/geopolitics/search.html?q=All" class="pill active">All</a><a href="/geopolitics/search.html?q=AI%20Ethics" class="pill ">AI Ethics</a><a href="/geopolitics/search.html?q=Cybersecurity" class="pill ">Cybersecurity</a><a href="/geopolitics/search.html?q=Career%20%26%20Future" class="pill ">Career & Future</a><a href="/geopolitics/search.html?q=Policy" class="pill ">Policy</a><a href="/geopolitics/search.html?q=Privacy" class="pill ">Privacy</a><a href="/geopolitics/search.html?q=Machine%20Learning" class="pill ">Machine Learning</a><a href="/geopolitics/search.html?q=Big%20Data" class="pill ">Big Data</a>
-      </div>
+  </div>
+
+  <!-- ─── Category Filter Bar ─── -->
+  <div class="filter-bar">
+    <div class="filter-bar-inner">
+      <a href="/geopolitics/search.html?q=All" class="filter-pill active">All</a><a href="/geopolitics/search.html?q=AI%20Ethics" class="filter-pill ">AI Ethics</a><a href="/geopolitics/search.html?q=Cybersecurity" class="filter-pill ">Cybersecurity</a><a href="/geopolitics/search.html?q=Career%20%26%20Future" class="filter-pill ">Career & Future</a><a href="/geopolitics/search.html?q=Policy" class="filter-pill ">Policy</a><a href="/geopolitics/search.html?q=Privacy" class="filter-pill ">Privacy</a><a href="/geopolitics/search.html?q=Machine%20Learning" class="filter-pill ">Machine Learning</a><a href="/geopolitics/search.html?q=Big%20Data" class="filter-pill ">Big Data</a>
     </div>
-  </header>
+  </div>
 
   <main id="main-content" class="container" style="padding-top: 2rem; padding-bottom: 4rem;">
     <article itemscope itemtype="https://schema.org/Article" style="max-width: 860px; margin: 0 auto;">
@@ -510,13 +513,36 @@ It provides "plausible deniability." If a proxy attacks, Iran denies involvement
   </main>
 
   
-  <footer class="site-footer">
-    <p>&copy; 2026 Quillmatick. All rights reserved.</p>
-    <nav class="footer-links" aria-label="Legal links">
-      <a href="/tech/legal/privacy/">Privacy Policy</a>
-      <a href="/tech/legal/terms/">Terms of Service</a>
-      <a href="/tech/feed.xml">RSS Feed</a>
-    </nav>
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-col-h">Sections</div>
+          <ul class="footer-links" role="list">
+            <li><a href="/tech">Tech</a></li>
+            <li><a href="/geopolitics">Geopolitics</a></li>
+            <li><a href="/tech/ai-digest">AI Digest</a></li>
+            <li><a href="/tech/about.html">About us</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-h">Company</div>
+          <ul class="footer-links" role="list">
+            <li><a href="/tech/about.html">About</a></li>
+            <li><a href="/tech/legal/privacy/">Privacy policy</a></li>
+            <li><a href="/tech/legal/terms/">Terms of service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">&copy; 2026 Quillmatick. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="/tech/legal/privacy/">Privacy</a>
+          <a href="/tech/legal/terms/">Terms</a>
+          <a href="/tech/feed.xml">RSS</a>
+        </div>
+      </div>
+    </div>
   </footer>
   <!-- Cookie consent -->
   <div id="cookie-banner" role="dialog" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#161312;border-top:1px solid #ff7a00;padding:14px 24px;align-items:center;justify-content:space-between;gap:16px;z-index:999;flex-wrap:wrap;">
