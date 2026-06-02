@@ -102,31 +102,43 @@
   <a href="#main-content" class="skip-link">Skip to main content</a>
   
   <header class="site-header">
-    <nav>
+    <div class="header-main">
       <div class="header-left">
-        <a href="/" class="logo">Quillmatick</a>
-        <a href="/tech" class="">Tech</a>
-        <a href="/geopolitics" class="active">Geopolitics</a>
-        <a href="/geopolitics/about.html" class="">About Us</a>
+        <a href="/" class="logo">Quill<span>matick</span></a>
+        <nav class="header-nav">
+          <a href="/tech" class="">Tech</a>
+          <a href="/geopolitics" class="active">Geopolitics</a>
+          <a href="/geopolitics">AI Digest</a>
+          <a href="/geopolitics">Archive</a>
+        </nav>
       </div>
       <div class="header-right">
-        <form action="/geopolitics/search.html" method="GET" class="search-form">
-          <input type="text" name="q" placeholder="Search..." aria-label="Search blog" autocomplete="off" required />
-          <button type="submit">🔍</button>
-        </form>
-        <button id="theme-btn" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+        <button class="icon-btn search-btn" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+        <button class="icon-btn" aria-label="Notifications">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+        </button>
+        <button id="theme-btn" class="icon-btn theme-toggle" aria-label="Toggle theme">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
       </div>
-    </nav>
+    </div>
     <div class="trending-bar">
-      <span class="trending-label">TRENDING:</span>
+      <span class="trending-label">LIVE FEED</span>
       <div class="ticker-wrap">
         <div class="ticker" id="trending-ticker">
-          <a href="/geopolitics/search.html?q=Ebola" class="ticker-item" data-tag="Ebola">#Ebola</a>
-          <a href="/geopolitics/search.html?q=Diplomacy" class="ticker-item" data-tag="Diplomacy">#Diplomacy</a>
-          <a href="/geopolitics/search.html?q=GlobalShift" class="ticker-item" data-tag="GlobalShift">#GlobalShift</a>
-          <a href="/geopolitics/search.html?q=ForeignPolicy" class="ticker-item" data-tag="ForeignPolicy">#ForeignPolicy</a>
-          <a href="/geopolitics/search.html?q=Elections" class="ticker-item" data-tag="Elections">#Elections</a>
+          <span class="ticker-item">ity2026</span>
+          <span class="ticker-item text-white">Apple zero-day exploit patched with Anthropic</span>
+          <a href="/geopolitics/search.html?q=GenerativeAI" class="ticker-item highlight" data-tag="GenerativeAI">#GenerativeAI</a>
+          <span class="ticker-item text-white">Warren proposes AI tax for the people</span>
+          <a href="/geopolitics/search.html?q=MachineLearning" class="ticker-item highlight" data-tag="MachineLearning">#MachineLearning</a>
         </div>
+      </div>
+    </div>
+    <div class="category-pills">
+      <div class="category-pills-inner">
+        <a href="/geopolitics/search.html?q=All" class="pill active">All</a><a href="/geopolitics/search.html?q=AI%20Ethics" class="pill ">AI Ethics</a><a href="/geopolitics/search.html?q=Cybersecurity" class="pill ">Cybersecurity</a><a href="/geopolitics/search.html?q=Career%20%26%20Future" class="pill ">Career & Future</a><a href="/geopolitics/search.html?q=Policy" class="pill ">Policy</a><a href="/geopolitics/search.html?q=Privacy" class="pill ">Privacy</a><a href="/geopolitics/search.html?q=Machine%20Learning" class="pill ">Machine Learning</a><a href="/geopolitics/search.html?q=Big%20Data" class="pill ">Big Data</a>
       </div>
     </div>
   </header>
@@ -137,8 +149,8 @@
 
       <header class="post-header">
         <div class="post-meta">
-          <time itemprop="datePublished" datetime="1970-01-01T00:00:00.000Z">
-            January 1, 1970
+          <time itemprop="datePublished" datetime="2026-05-26T10:33:14.000Z">
+            May 26, 2026
           </time>
           <span class="word-count">1968 words</span>
           <span class="read-time">8 min read</span>
@@ -390,25 +402,25 @@ The Global South is a barometer for the legitimacy of the "rules-based order." I
         <h3>Recommended For You</h3>
         <div class="related-grid">
           
-    <a href="/geopolitics/how-trumps-deal-outline-affects-iran-gets-bomb-risks" class="related-card">
-      <img src="https://image.pollinations.ai/prompt/iran%20nuclear%20deal%20%20non-proliferation%20%20middle%20east%20security%20%20uranium%20enrichment%20%20iaea%20%20secondary%20sanctions%2C%20The%20Ultimate%20Guide%20How%20Trumps%20Deal%20Outline%20Affects%20Iran%20Gets%2C%20futuristic%20digital%2C%20cinematic%20lighting%2C%20cybersecurity%20theme%2C%20dark%20background%20with%20neon%20accents%2C%20professional%20technology%20blog%20header%2C%20high%20resolution%2C%204k?width=1200&height=630&nologo=true&seed=iy4j2z" alt="The Ultimate Guide: How Trumps Deal Outline Affects Iran Gets" loading="lazy" />
+    <a href="/geopolitics/senior-ukrainian-commander-the-guide-to-the-wars-turning-point" class="related-card">
+      <img src="https://image.pollinations.ai/prompt/ukraine-russia%20war%20%20military%20strategy%20%20geopolitics%20%20defense%20analysis%20%20operational%20readiness%20%20strategic%20maneuver%2C%20reuters%20exclusive%20senior%20Senior%20Ukrainian%20Commander%20The%20Guide%2C%20futuristic%20digital%2C%20cinematic%20lighting%2C%20cybersecurity%20theme%2C%20dark%20background%20with%20neon%20accents%2C%20professional%20technology%20blog%20header%2C%20high%20resolution%2C%204k?width=1200&height=630&nologo=true&seed=96mc8u" alt="reuters exclusive senior: Senior Ukrainian Commander: The Guide" loading="lazy" />
       <div class="related-card-body">
-        <h4>The Ultimate Guide: How Trumps Deal Outline Affects Iran Gets</h4>
-        <p>Does the risk of Iran gets bomb increase under Bibis Trumps deal? Analyze the Trumps deal outline to gauge regional stability and stay informed. Read more now.</p>
+        <h4>reuters exclusive senior: Senior Ukrainian Commander: The Guide</h4>
+        <p>Read this Reuters exclusive senior Ukrainian commander guide to identify the war&#039;s turning point and gain strategic insights. Master the battlefield logic now.</p>
       </div>
     </a>
-    <a href="/geopolitics/self-defense-strikes-iran-the-complete-guide-to-the-conflict" class="related-card">
-      <img src="https://image.pollinations.ai/prompt/military%20strategy%20%20iran%20conflict%20%20self-defense%20%20national%20security%20%20precision%20strikes%20%20geopolitics%2C%20military%20says%20carried%20SelfDefense%20Strikes%20Iran%20The%20Complete%2C%20futuristic%20digital%2C%20cinematic%20lighting%2C%20cybersecurity%20theme%2C%20dark%20background%20with%20neon%20accents%2C%20professional%20technology%20blog%20header%2C%20high%20resolution%2C%204k?width=1200&height=630&nologo=true&seed=kx4ruw" alt="military says carried: Self-Defense Strikes Iran: The Complete" loading="lazy" />
+    <a href="/geopolitics/zelensky-sends-trump-urgent-letter-on-missile-shortages" class="related-card">
+      <img src="https://image.pollinations.ai/prompt/volodymyr%20zelensky%20%20donald%20trump%20%20ukraine-us%20relations%20%20air%20defense%20%20missile%20shortages%20%20geopolitics%2C%20The%20Ultimate%20Guide%20Zelensky%20Sends%20Trump%20Urgent%20Letter%20on%2C%20futuristic%20digital%2C%20cinematic%20lighting%2C%20cybersecurity%20theme%2C%20dark%20background%20with%20neon%20accents%2C%20professional%20technology%20blog%20header%2C%20high%20resolution%2C%204k?width=1200&height=630&nologo=true&seed=k38qyp" alt="The Ultimate Guide: Zelensky Sends Trump Urgent Letter on" loading="lazy" />
       <div class="related-card-body">
-        <h4>military says carried: Self-Defense Strikes Iran: The Complete</h4>
-        <p>Learn more about military says carried. Self-defense strikes Iran: get the full breakdown of military actions. Learn the strategic impact and geopolitical ri...</p>
+        <h4>The Ultimate Guide: Zelensky Sends Trump Urgent Letter on</h4>
+        <p>Zelensky sends Trump an urgent letter regarding missile shortages. Learn how this plea impacts war strategy to stay informed on global security. Read more now.</p>
       </div>
     </a>
-    <a href="/geopolitics/taiwan-overtakes-india-the-complete-guide-to-market-shifts" class="related-card">
-      <img src="https://image.pollinations.ai/prompt/market%20analysis%20%20semiconductor%20industry%20%20taiwan%20economy%20%20india%20economy%20%20ai%20investment%20%20geopolitics%2C%20Taiwan%20Overtakes%20India%20The%20Complete%20Guide%20to%20Market%20Shifts%20for%202026%2C%20futuristic%20digital%2C%20cinematic%20lighting%2C%20cybersecurity%20theme%2C%20dark%20background%20with%20neon%20accents%2C%20professional%20technology%20blog%20header%2C%20high%20resolution%2C%204k?width=1200&height=630&nologo=true&seed=mxre8j" alt="Taiwan Overtakes India: The Complete Guide to Market Shifts for 2026" loading="lazy" />
+    <a href="/geopolitics/ukraine-hits-russian-aircraft-plant-and-airbase-full-guide" class="related-card">
+      <img src="https://image.pollinations.ai/prompt/ukraine-russia%20war%20%20strategic%20attrition%20%20military%20infrastructure%20%20aerial%20warfare%20%20defense%20strategy%20%20geopolitics%2C%20Ukraine%20Hits%20Russian%20Aircraft%20Plant%20and%20Airbase%20Full%20Guide%20for%202026%2C%20futuristic%20digital%2C%20cinematic%20lighting%2C%20cybersecurity%20theme%2C%20dark%20background%20with%20neon%20accents%2C%20professional%20technology%20blog%20header%2C%20high%20resolution%2C%204k?width=1200&height=630&nologo=true&seed=wlhte6" alt="Ukraine Hits Russian Aircraft Plant and Airbase: Full Guide for 2026" loading="lazy" />
       <div class="related-card-body">
-        <h4>Taiwan Overtakes India: The Complete Guide to Market Shifts for 2026</h4>
-        <p>Taiwan overtakes India in key market shifts. Learn why India&#039;s rank changes and how to pivot your strategy for growth. Stay ahead of the global trend now.</p>
+        <h4>Ukraine Hits Russian Aircraft Plant and Airbase: Full Guide for 2026</h4>
+        <p>Ukraine hits Russian aircraft plant and airbase in a bold strike. Get the full breakdown of targets and strategic impact to stay informed. Read the guide now.</p>
       </div>
     </a>
         </div>
@@ -437,7 +449,7 @@ The Global South is a barometer for the legitimacy of the "rules-based order." I
       </section>
 
       <footer class="post-footer">
-        <a href="/geopolitics" class="back-link">← Back to Home</a>
+        <a href="/geopolitics" class="back-link">← Back to Geopolitics</a>
       </footer>
     </article>
   </main>
@@ -711,7 +723,9 @@ The Global South is a barometer for the legitimacy of the "rules-based order." I
               if (data.data && data.data.length > 0) {
                 dropdown.innerHTML = data.data.slice(0, 5).map(post => {
                   const readTime = Math.ceil((post.word_count || 1000) / 250);
-                  return '<a href="/blog/' + post.slug + '" class="search-dropdown-item">' +
+                  const cat = post.category || 'tech';
+                  const catPath = cat === 'geopolitics' ? '/geopolitics' : '/tech';
+                  return '<a href="' + catPath + '/' + post.slug + '" class="search-dropdown-item">' +
                     '<h4>' + post.title + '</h4>' +
                     '<p>' + readTime + ' min read • ' + post.meta_description + '</p>' +
                     '</a>';
@@ -785,7 +799,7 @@ The Global South is a barometer for the legitimacy of the "rules-based order." I
               ticker.innerHTML = data.tags.map(tag => {
                 const displayName = tag.name.startsWith('#') ? tag.name : '#' + tag.name;
                 const queryVal = tag.name.startsWith('#') ? tag.name.slice(1) : tag.name;
-                return '<a href="/blog/search.html?q=' + encodeURIComponent(queryVal) + '" class="ticker-item" data-tag="' + queryVal + '">' + displayName + '</a>';
+                return '<a href="/tech/search.html?q=' + encodeURIComponent(queryVal) + '" class="ticker-item" data-tag="' + queryVal + '">' + displayName + '</a>';
               }).join('');
               
               // Re-bind dynamic handlers for search updates

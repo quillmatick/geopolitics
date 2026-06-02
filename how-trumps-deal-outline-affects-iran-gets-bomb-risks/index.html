@@ -102,31 +102,43 @@
   <a href="#main-content" class="skip-link">Skip to main content</a>
   
   <header class="site-header">
-    <nav>
+    <div class="header-main">
       <div class="header-left">
-        <a href="/" class="logo">Quillmatick</a>
-        <a href="/tech" class="">Tech</a>
-        <a href="/geopolitics" class="active">Geopolitics</a>
-        <a href="/geopolitics/about.html" class="">About Us</a>
+        <a href="/" class="logo">Quill<span>matick</span></a>
+        <nav class="header-nav">
+          <a href="/tech" class="">Tech</a>
+          <a href="/geopolitics" class="active">Geopolitics</a>
+          <a href="/geopolitics">AI Digest</a>
+          <a href="/geopolitics">Archive</a>
+        </nav>
       </div>
       <div class="header-right">
-        <form action="/geopolitics/search.html" method="GET" class="search-form">
-          <input type="text" name="q" placeholder="Search..." aria-label="Search blog" autocomplete="off" required />
-          <button type="submit">🔍</button>
-        </form>
-        <button id="theme-btn" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+        <button class="icon-btn search-btn" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+        <button class="icon-btn" aria-label="Notifications">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+        </button>
+        <button id="theme-btn" class="icon-btn theme-toggle" aria-label="Toggle theme">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
       </div>
-    </nav>
+    </div>
     <div class="trending-bar">
-      <span class="trending-label">TRENDING:</span>
+      <span class="trending-label">LIVE FEED</span>
       <div class="ticker-wrap">
         <div class="ticker" id="trending-ticker">
-          <a href="/geopolitics/search.html?q=Ebola" class="ticker-item" data-tag="Ebola">#Ebola</a>
-          <a href="/geopolitics/search.html?q=Diplomacy" class="ticker-item" data-tag="Diplomacy">#Diplomacy</a>
-          <a href="/geopolitics/search.html?q=GlobalShift" class="ticker-item" data-tag="GlobalShift">#GlobalShift</a>
-          <a href="/geopolitics/search.html?q=ForeignPolicy" class="ticker-item" data-tag="ForeignPolicy">#ForeignPolicy</a>
-          <a href="/geopolitics/search.html?q=Elections" class="ticker-item" data-tag="Elections">#Elections</a>
+          <span class="ticker-item">ity2026</span>
+          <span class="ticker-item text-white">Apple zero-day exploit patched with Anthropic</span>
+          <a href="/geopolitics/search.html?q=GenerativeAI" class="ticker-item highlight" data-tag="GenerativeAI">#GenerativeAI</a>
+          <span class="ticker-item text-white">Warren proposes AI tax for the people</span>
+          <a href="/geopolitics/search.html?q=MachineLearning" class="ticker-item highlight" data-tag="MachineLearning">#MachineLearning</a>
         </div>
+      </div>
+    </div>
+    <div class="category-pills">
+      <div class="category-pills-inner">
+        <a href="/geopolitics/search.html?q=All" class="pill active">All</a><a href="/geopolitics/search.html?q=AI%20Ethics" class="pill ">AI Ethics</a><a href="/geopolitics/search.html?q=Cybersecurity" class="pill ">Cybersecurity</a><a href="/geopolitics/search.html?q=Career%20%26%20Future" class="pill ">Career & Future</a><a href="/geopolitics/search.html?q=Policy" class="pill ">Policy</a><a href="/geopolitics/search.html?q=Privacy" class="pill ">Privacy</a><a href="/geopolitics/search.html?q=Machine%20Learning" class="pill ">Machine Learning</a><a href="/geopolitics/search.html?q=Big%20Data" class="pill ">Big Data</a>
       </div>
     </div>
   </header>
@@ -137,8 +149,8 @@
 
       <header class="post-header">
         <div class="post-meta">
-          <time itemprop="datePublished" datetime="1970-01-01T00:00:00.000Z">
-            January 1, 1970
+          <time itemprop="datePublished" datetime="2026-05-26T10:27:10.000Z">
+            May 26, 2026
           </time>
           <span class="word-count">1898 words</span>
           <span class="read-time">8 min read</span>
@@ -403,25 +415,25 @@ They target non-US companies. If a European bank processes Iranian oil payments,
         <h3>Recommended For You</h3>
         <div class="related-grid">
           
+    <a href="/geopolitics/how-iran-says-draft-deal-would-reopen-hormuz-shipping" class="related-card">
+      <img src="https://image.pollinations.ai/prompt/strait%20of%20hormuz%20%20iran%20%20sanctions%20relief%20%20global%20oil%20trade%20%20maritime%20security%20%20geopolitics%2C%20The%20Ultimate%20Guide%20How%20Iran%20Says%20Draft%20Deal%20Would%20Reopen%20Hormuz%2C%20futuristic%20digital%2C%20cinematic%20lighting%2C%20cybersecurity%20theme%2C%20dark%20background%20with%20neon%20accents%2C%20professional%20technology%20blog%20header%2C%20high%20resolution%2C%204k?width=1200&height=630&nologo=true&seed=rgfq0l" alt="The Ultimate Guide: How Iran Says Draft Deal Would Reopen Hormuz" loading="lazy" />
+      <div class="related-card-body">
+        <h4>The Ultimate Guide: How Iran Says Draft Deal Would Reopen Hormuz</h4>
+        <p>Iran says draft deal would reopen Hormuz shipping lanes. Learn how this agreement secures global trade and lowers oil risks. Read the full analysis here.</p>
+      </div>
+    </a>
+    <a href="/geopolitics/iran-condemns-strikes-a-guide-to-the-gross-violation" class="related-card">
+      <img src="https://image.pollinations.ai/prompt/iran%20%20geopolitics%20%20international%20law%20%20middle%20east%20conflict%20%20strategic%20depth%20%20security%20paradox%2C%20Iran%20Condemns%20Strikes%20A%20Guide%20to%20the%20Gross%20Violation%20for%202026%2C%20futuristic%20digital%2C%20cinematic%20lighting%2C%20cybersecurity%20theme%2C%20dark%20background%20with%20neon%20accents%2C%20professional%20technology%20blog%20header%2C%20high%20resolution%2C%204k?width=1200&height=630&nologo=true&seed=gyd5po" alt="Iran Condemns Strikes: A Guide to the Gross Violation for 2026" loading="lazy" />
+      <div class="related-card-body">
+        <h4>Iran Condemns Strikes: A Guide to the Gross Violation for 2026</h4>
+        <p>Iran condemns strikes as a gross violation. Learn the legal implications and geopolitical risks to stay informed on global security. Read the full analysis.</p>
+      </div>
+    </a>
     <a href="/geopolitics/self-defense-strikes-iran-the-complete-guide-to-the-conflict" class="related-card">
       <img src="https://image.pollinations.ai/prompt/military%20strategy%20%20iran%20conflict%20%20self-defense%20%20national%20security%20%20precision%20strikes%20%20geopolitics%2C%20military%20says%20carried%20SelfDefense%20Strikes%20Iran%20The%20Complete%2C%20futuristic%20digital%2C%20cinematic%20lighting%2C%20cybersecurity%20theme%2C%20dark%20background%20with%20neon%20accents%2C%20professional%20technology%20blog%20header%2C%20high%20resolution%2C%204k?width=1200&height=630&nologo=true&seed=kx4ruw" alt="military says carried: Self-Defense Strikes Iran: The Complete" loading="lazy" />
       <div class="related-card-body">
         <h4>military says carried: Self-Defense Strikes Iran: The Complete</h4>
         <p>Learn more about military says carried. Self-defense strikes Iran: get the full breakdown of military actions. Learn the strategic impact and geopolitical ri...</p>
-      </div>
-    </a>
-    <a href="/geopolitics/putin-signs-law-guide-to-use-of-military-force-abroad" class="related-card">
-      <img src="https://image.pollinations.ai/prompt/vladimir%20putin%20%20russian%20military%20law%20%20foreign%20intervention%20%20national%20security%20%20russkiy%20mir%20%20global%20security%2C%20Putin%20Signs%20Law%20Guide%20to%20Use%20of%20Military%20Force%20Abroad%20for%202026%2C%20futuristic%20digital%2C%20cinematic%20lighting%2C%20cybersecurity%20theme%2C%20dark%20background%20with%20neon%20accents%2C%20professional%20technology%20blog%20header%2C%20high%20resolution%2C%204k?width=1200&height=630&nologo=true&seed=xzgu5a" alt="Putin Signs Law: Guide to Use of Military Force Abroad for 2026" loading="lazy" />
-      <div class="related-card-body">
-        <h4>Putin Signs Law: Guide to Use of Military Force Abroad for 2026</h4>
-        <p>Putin signs law authorizing military force abroad. Learn how these new rules impact global security and stay informed on shifting geopolitical risks. Read more.</p>
-      </div>
-    </a>
-    <a href="/geopolitics/fast-moving-ebola-epidemic-how-to-support-global-relief" class="related-card">
-      <img src="https://image.pollinations.ai/prompt/ebola%20%20global%20health%20%20humanitarian%20aid%20%20pandemic%20preparedness%20%20public%20health%20policy%20%20disease%20surveillance%2C%20who%20chief%20says%20Fastmoving%20Ebola%20Epidemic%20How%20to%20Support%2C%20futuristic%20digital%2C%20cinematic%20lighting%2C%20cybersecurity%20theme%2C%20dark%20background%20with%20neon%20accents%2C%20professional%20technology%20blog%20header%2C%20high%20resolution%2C%204k?width=1200&height=630&nologo=true&seed=grqivy" alt="who chief says: Fast-moving Ebola Epidemic: How to Support" loading="lazy" />
-      <div class="related-card-body">
-        <h4>who chief says: Fast-moving Ebola Epidemic: How to Support</h4>
-        <p>WHO chief says fast-moving Ebola is a crisis. Learn how to provide critical aid and save lives through global relief efforts. Join the fight to stop the spread.</p>
       </div>
     </a>
         </div>
@@ -450,7 +462,7 @@ They target non-US companies. If a European bank processes Iranian oil payments,
       </section>
 
       <footer class="post-footer">
-        <a href="/geopolitics" class="back-link">← Back to Home</a>
+        <a href="/geopolitics" class="back-link">← Back to Geopolitics</a>
       </footer>
     </article>
   </main>
@@ -724,7 +736,9 @@ They target non-US companies. If a European bank processes Iranian oil payments,
               if (data.data && data.data.length > 0) {
                 dropdown.innerHTML = data.data.slice(0, 5).map(post => {
                   const readTime = Math.ceil((post.word_count || 1000) / 250);
-                  return '<a href="/blog/' + post.slug + '" class="search-dropdown-item">' +
+                  const cat = post.category || 'tech';
+                  const catPath = cat === 'geopolitics' ? '/geopolitics' : '/tech';
+                  return '<a href="' + catPath + '/' + post.slug + '" class="search-dropdown-item">' +
                     '<h4>' + post.title + '</h4>' +
                     '<p>' + readTime + ' min read • ' + post.meta_description + '</p>' +
                     '</a>';
@@ -798,7 +812,7 @@ They target non-US companies. If a European bank processes Iranian oil payments,
               ticker.innerHTML = data.tags.map(tag => {
                 const displayName = tag.name.startsWith('#') ? tag.name : '#' + tag.name;
                 const queryVal = tag.name.startsWith('#') ? tag.name.slice(1) : tag.name;
-                return '<a href="/blog/search.html?q=' + encodeURIComponent(queryVal) + '" class="ticker-item" data-tag="' + queryVal + '">' + displayName + '</a>';
+                return '<a href="/tech/search.html?q=' + encodeURIComponent(queryVal) + '" class="ticker-item" data-tag="' + queryVal + '">' + displayName + '</a>';
               }).join('');
               
               // Re-bind dynamic handlers for search updates

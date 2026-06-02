@@ -102,31 +102,43 @@
   <a href="#main-content" class="skip-link">Skip to main content</a>
   
   <header class="site-header">
-    <nav>
+    <div class="header-main">
       <div class="header-left">
-        <a href="/" class="logo">Quillmatick</a>
-        <a href="/tech" class="">Tech</a>
-        <a href="/geopolitics" class="active">Geopolitics</a>
-        <a href="/geopolitics/about.html" class="">About Us</a>
+        <a href="/" class="logo">Quill<span>matick</span></a>
+        <nav class="header-nav">
+          <a href="/tech" class="">Tech</a>
+          <a href="/geopolitics" class="active">Geopolitics</a>
+          <a href="/geopolitics">AI Digest</a>
+          <a href="/geopolitics">Archive</a>
+        </nav>
       </div>
       <div class="header-right">
-        <form action="/geopolitics/search.html" method="GET" class="search-form">
-          <input type="text" name="q" placeholder="Search..." aria-label="Search blog" autocomplete="off" required />
-          <button type="submit">🔍</button>
-        </form>
-        <button id="theme-btn" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+        <button class="icon-btn search-btn" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+        <button class="icon-btn" aria-label="Notifications">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+        </button>
+        <button id="theme-btn" class="icon-btn theme-toggle" aria-label="Toggle theme">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
       </div>
-    </nav>
+    </div>
     <div class="trending-bar">
-      <span class="trending-label">TRENDING:</span>
+      <span class="trending-label">LIVE FEED</span>
       <div class="ticker-wrap">
         <div class="ticker" id="trending-ticker">
-          <a href="/geopolitics/search.html?q=Ebola" class="ticker-item" data-tag="Ebola">#Ebola</a>
-          <a href="/geopolitics/search.html?q=Diplomacy" class="ticker-item" data-tag="Diplomacy">#Diplomacy</a>
-          <a href="/geopolitics/search.html?q=GlobalShift" class="ticker-item" data-tag="GlobalShift">#GlobalShift</a>
-          <a href="/geopolitics/search.html?q=ForeignPolicy" class="ticker-item" data-tag="ForeignPolicy">#ForeignPolicy</a>
-          <a href="/geopolitics/search.html?q=Elections" class="ticker-item" data-tag="Elections">#Elections</a>
+          <span class="ticker-item">ity2026</span>
+          <span class="ticker-item text-white">Apple zero-day exploit patched with Anthropic</span>
+          <a href="/geopolitics/search.html?q=GenerativeAI" class="ticker-item highlight" data-tag="GenerativeAI">#GenerativeAI</a>
+          <span class="ticker-item text-white">Warren proposes AI tax for the people</span>
+          <a href="/geopolitics/search.html?q=MachineLearning" class="ticker-item highlight" data-tag="MachineLearning">#MachineLearning</a>
         </div>
+      </div>
+    </div>
+    <div class="category-pills">
+      <div class="category-pills-inner">
+        <a href="/geopolitics/search.html?q=All" class="pill active">All</a><a href="/geopolitics/search.html?q=AI%20Ethics" class="pill ">AI Ethics</a><a href="/geopolitics/search.html?q=Cybersecurity" class="pill ">Cybersecurity</a><a href="/geopolitics/search.html?q=Career%20%26%20Future" class="pill ">Career & Future</a><a href="/geopolitics/search.html?q=Policy" class="pill ">Policy</a><a href="/geopolitics/search.html?q=Privacy" class="pill ">Privacy</a><a href="/geopolitics/search.html?q=Machine%20Learning" class="pill ">Machine Learning</a><a href="/geopolitics/search.html?q=Big%20Data" class="pill ">Big Data</a>
       </div>
     </div>
   </header>
@@ -137,8 +149,8 @@
 
       <header class="post-header">
         <div class="post-meta">
-          <time itemprop="datePublished" datetime="1970-01-01T00:00:00.000Z">
-            January 1, 1970
+          <time itemprop="datePublished" datetime="2026-05-26T10:23:09.000Z">
+            May 26, 2026
           </time>
           <span class="word-count">1863 words</span>
           <span class="read-time">8 min read</span>
@@ -403,11 +415,25 @@ Civil unrest in friendly regimes, perceived threats to Russian minorities, and t
         <h3>Recommended For You</h3>
         <div class="related-grid">
           
-    <a href="/geopolitics/fast-moving-ebola-epidemic-how-to-support-global-relief" class="related-card">
-      <img src="https://image.pollinations.ai/prompt/ebola%20%20global%20health%20%20humanitarian%20aid%20%20pandemic%20preparedness%20%20public%20health%20policy%20%20disease%20surveillance%2C%20who%20chief%20says%20Fastmoving%20Ebola%20Epidemic%20How%20to%20Support%2C%20futuristic%20digital%2C%20cinematic%20lighting%2C%20cybersecurity%20theme%2C%20dark%20background%20with%20neon%20accents%2C%20professional%20technology%20blog%20header%2C%20high%20resolution%2C%204k?width=1200&height=630&nologo=true&seed=grqivy" alt="who chief says: Fast-moving Ebola Epidemic: How to Support" loading="lazy" />
+    <a href="/geopolitics/self-defense-strikes-iran-the-complete-guide-to-the-conflict" class="related-card">
+      <img src="https://image.pollinations.ai/prompt/military%20strategy%20%20iran%20conflict%20%20self-defense%20%20national%20security%20%20precision%20strikes%20%20geopolitics%2C%20military%20says%20carried%20SelfDefense%20Strikes%20Iran%20The%20Complete%2C%20futuristic%20digital%2C%20cinematic%20lighting%2C%20cybersecurity%20theme%2C%20dark%20background%20with%20neon%20accents%2C%20professional%20technology%20blog%20header%2C%20high%20resolution%2C%204k?width=1200&height=630&nologo=true&seed=kx4ruw" alt="military says carried: Self-Defense Strikes Iran: The Complete" loading="lazy" />
       <div class="related-card-body">
-        <h4>who chief says: Fast-moving Ebola Epidemic: How to Support</h4>
-        <p>WHO chief says fast-moving Ebola is a crisis. Learn how to provide critical aid and save lives through global relief efforts. Join the fight to stop the spread.</p>
+        <h4>military says carried: Self-Defense Strikes Iran: The Complete</h4>
+        <p>Learn more about military says carried. Self-defense strikes Iran: get the full breakdown of military actions. Learn the strategic impact and geopolitical ri...</p>
+      </div>
+    </a>
+    <a href="/geopolitics/how-ukraine-just-made-itself-impossible-to-abandon" class="related-card">
+      <img src="https://image.pollinations.ai/prompt/ukraine%20%20geopolitics%20%20national%20security%20%20nato%20%20european%20union%20%20strategic%20integration%2C%20The%20Ultimate%20Guide%20How%20Ukraine%20Just%20Made%20Itself%20Impossible%20to%2C%20futuristic%20digital%2C%20cinematic%20lighting%2C%20cybersecurity%20theme%2C%20dark%20background%20with%20neon%20accents%2C%20professional%20technology%20blog%20header%2C%20high%20resolution%2C%204k?width=1200&height=630&nologo=true&seed=bxo9se" alt="The Ultimate Guide: How Ukraine Just Made Itself Impossible to" loading="lazy" />
+      <div class="related-card-body">
+        <h4>The Ultimate Guide: How Ukraine Just Made Itself Impossible to</h4>
+        <p>Ukraine just made itself impossible to abandon. Learn how strategic shifts secure long-term global support and ensure victory. Read the full analysis here.</p>
+      </div>
+    </a>
+    <a href="/geopolitics/how-trumps-deal-outline-affects-iran-gets-bomb-risks" class="related-card">
+      <img src="https://image.pollinations.ai/prompt/iran%20nuclear%20deal%20%20non-proliferation%20%20middle%20east%20security%20%20uranium%20enrichment%20%20iaea%20%20secondary%20sanctions%2C%20The%20Ultimate%20Guide%20How%20Trumps%20Deal%20Outline%20Affects%20Iran%20Gets%2C%20futuristic%20digital%2C%20cinematic%20lighting%2C%20cybersecurity%20theme%2C%20dark%20background%20with%20neon%20accents%2C%20professional%20technology%20blog%20header%2C%20high%20resolution%2C%204k?width=1200&height=630&nologo=true&seed=iy4j2z" alt="The Ultimate Guide: How Trumps Deal Outline Affects Iran Gets" loading="lazy" />
+      <div class="related-card-body">
+        <h4>The Ultimate Guide: How Trumps Deal Outline Affects Iran Gets</h4>
+        <p>Does the risk of Iran gets bomb increase under Bibis Trumps deal? Analyze the Trumps deal outline to gauge regional stability and stay informed. Read more now.</p>
       </div>
     </a>
         </div>
@@ -436,7 +462,7 @@ Civil unrest in friendly regimes, perceived threats to Russian minorities, and t
       </section>
 
       <footer class="post-footer">
-        <a href="/geopolitics" class="back-link">← Back to Home</a>
+        <a href="/geopolitics" class="back-link">← Back to Geopolitics</a>
       </footer>
     </article>
   </main>
@@ -710,7 +736,9 @@ Civil unrest in friendly regimes, perceived threats to Russian minorities, and t
               if (data.data && data.data.length > 0) {
                 dropdown.innerHTML = data.data.slice(0, 5).map(post => {
                   const readTime = Math.ceil((post.word_count || 1000) / 250);
-                  return '<a href="/blog/' + post.slug + '" class="search-dropdown-item">' +
+                  const cat = post.category || 'tech';
+                  const catPath = cat === 'geopolitics' ? '/geopolitics' : '/tech';
+                  return '<a href="' + catPath + '/' + post.slug + '" class="search-dropdown-item">' +
                     '<h4>' + post.title + '</h4>' +
                     '<p>' + readTime + ' min read • ' + post.meta_description + '</p>' +
                     '</a>';
@@ -784,7 +812,7 @@ Civil unrest in friendly regimes, perceived threats to Russian minorities, and t
               ticker.innerHTML = data.tags.map(tag => {
                 const displayName = tag.name.startsWith('#') ? tag.name : '#' + tag.name;
                 const queryVal = tag.name.startsWith('#') ? tag.name.slice(1) : tag.name;
-                return '<a href="/blog/search.html?q=' + encodeURIComponent(queryVal) + '" class="ticker-item" data-tag="' + queryVal + '">' + displayName + '</a>';
+                return '<a href="/tech/search.html?q=' + encodeURIComponent(queryVal) + '" class="ticker-item" data-tag="' + queryVal + '">' + displayName + '</a>';
               }).join('');
               
               // Re-bind dynamic handlers for search updates
