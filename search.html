@@ -73,11 +73,15 @@
       </div>
     </div>
   </header>
-  <main id="main-content" class="blog-index">
-    <h1 id="search-title">Search Results</h1>
-    <div id="results-count" style="margin-bottom: 2rem; color: var(--muted);">Searching...</div>
-    <div id="search-results" class="post-grid"></div>
-    <div id="pagination" style="display:flex; justify-content:center; gap:10px; margin-top:3rem;"></div>
+  <main id="main-content" class="container" style="padding-top: 3rem; padding-bottom: 5rem; min-height: 60vh;">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <div style="margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1.5rem;">
+        <h1 id="search-title" class="hero-headline" style="font-size: 2rem; margin-bottom: 0.5rem;">Search</h1>
+        <div id="results-count" style="font-family: var(--font-mono); font-size: 13px; color: var(--ink3);">Searching...</div>
+      </div>
+      <div id="search-results" class="article-list" role="list"></div>
+      <nav id="pagination" class="pagination" aria-label="Page navigation" style="border-top: none; margin-top: 2rem;"></nav>
+    </div>
   </main>
 
   <script>
@@ -128,32 +132,40 @@
       count.textContent = res.meta.total + ' article(s) found';
       
       if (!res.data.length) {
-        container.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding:3rem; color:var(--muted);">No matches found for "' + q + '".</div>';
+        container.innerHTML = '<div style="padding:3rem 0; text-align:center; color:var(--ink3); font-size:15px;">No matches found for "' + escapeHtml(q) + '".</div>';
         document.getElementById('pagination').innerHTML = '';
         return;
       }
 
-      container.innerHTML = res.data.map(post => {
-        const date = new Date(post.published_at * 1000).toLocaleDateString();
+      container.innerHTML = res.data.map((post, index) => {
+        const date = new Date(post.published_at * 1000).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
         const readTime = Math.ceil(post.word_count / 250);
-        const img = post.featured_image 
-          ? '<img src="' + post.featured_image + '" alt="' + post.title + '" />'
-          : '<div class="card-placeholder"></div>';
+        const numStr = (index + 1 + (page - 1) * 10).toString().padStart(2, '0');
+        
+        let thumbHtml = '';
+        if (post.featured_image) {
+          thumbHtml = '<div class="article-row-thumb" style="opacity: 1; background-image: url(' + post.featured_image + '); background-size: cover; background-position: center;"></div>';
+        } else {
+          thumbHtml = '<div class="article-row-thumb" aria-hidden="true" style="font-size:20px;">📄</div>';
+        }
 
         return `
-          <article class="post-card">
-            <a href="/geopolitics/${post.slug}">
-              ${img}
-              <div class="card-body">
-                <h2>${post.title}</h2>
-                <p>${post.meta_description}</p>
-                <div class="card-meta">
-                  <time>${date}</time>
-                  <span>${readTime} min read</span>
-                </div>
+          <a class="article-row" href="/geopolitics/${post.slug}" role="listitem">
+            <span class="article-row-num">${numStr}</span>
+            <div class="article-row-body">
+              <span class="badge badge-society" style="align-self:flex-start; margin-bottom:.25rem;">${'geopolitics'.charAt(0).toUpperCase() + 'geopolitics'.slice(1)}</span>
+              <span class="article-row-title">${escapeHtml(post.title)}</span>
+              <span class="article-row-excerpt">${escapeHtml(post.meta_description)}</span>
+              <div class="article-row-foot">
+                <span class="article-row-date">${date}</span>
+                <span class="article-row-time">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  ${readTime} min
+                </span>
               </div>
-            </a>
-          </article>
+            </div>
+            ${thumbHtml}
+          </a>
         `;
       }).join('');
 
@@ -161,13 +173,19 @@
       const pag = document.getElementById('pagination');
       if (res.meta.pages > 1) {
         let phtml = '';
-        if (page > 1) phtml += '<a href="?q=' + encodeURIComponent(q) + '&page=' + (page-1) + '" class="tag">← Previous</a>';
-        phtml += '<span style="padding:4px 10px">' + page + ' / ' + res.meta.pages + '</span>';
-        if (page < res.meta.pages) phtml += '<a href="?q=' + encodeURIComponent(q) + '&page=' + (page+1) + '" class="tag">Next →</a>';
+        if (page > 1) phtml += '<a href="?q=' + encodeURIComponent(q) + '&page=' + (page-1) + '" class="page-btn page-arrow" style="width:auto; padding: 0 16px;">← Prev</a>';
+        phtml += '<span class="page-btn active" style="pointer-events:none;">' + page + ' of ' + res.meta.pages + '</span>';
+        if (page < res.meta.pages) phtml += '<a href="?q=' + encodeURIComponent(q) + '&page=' + (page+1) + '" class="page-btn page-arrow" style="width:auto; padding: 0 16px;">Next →</a>';
         pag.innerHTML = phtml;
       } else {
         pag.innerHTML = '';
       }
+    }
+
+    // Basic HTML escaping for safety
+    function escapeHtml(str) {
+      if (!str) return '';
+      return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
     }
 
     doSearch();
