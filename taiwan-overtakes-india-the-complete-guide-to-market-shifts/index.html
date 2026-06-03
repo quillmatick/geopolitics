@@ -42,7 +42,7 @@
 <meta name="twitter:description" content="Taiwan overtakes India in key market shifts. Learn why India&#039;s rank changes and how to pivot your strategy for growth. Stay ahead of the global trend now." />
   <meta name="google-site-verification" content="hUe_seT-XN8e7n8DdWDa1DPVn42ochPv6Z25QENqyFQ" />
   
-  <link rel="stylesheet" href="/geopolitics/style.css?v=1780471118762" />
+  <link rel="stylesheet" href="/geopolitics/style.css?v=1780477990532" />
   <link rel="alternate" type="application/rss+xml" title="Quillmatick Geopolitics" href="https://quillmatick.github.io/geopolitics/feed.xml" />
   <script type="application/ld+json">
   {
@@ -804,11 +804,15 @@ It creates a "risk premium." Escalation leads to immediate capital flight from t
         } else {
           const data = await res.json();
           if (data.success) {
-            alert(data.message || 'Signed up successfully!');
+            submitBtn.textContent = '✓ You're in!';
+            submitBtn.style.background = 'var(--green)';
+            submitBtn.style.color = '#fff';
+            submitBtn.style.borderColor = 'var(--green)';
             emailInput.value = '';
-            if (window.__qmCloseSubscribeModal) window.__qmCloseSubscribeModal();
+            // Close modal after success (optional)
+            // if (window.__qmCloseSubscribeModal) setTimeout(window.__qmCloseSubscribeModal, 2000);
           } else {
-            alert(data.error || 'Failed to subscribe. Please try again.');
+            alert(data.message || 'Something went wrong. Please try again.');
           }
         }
       } catch (err) {
@@ -969,7 +973,14 @@ It creates a "risk premium." Escalation leads to immediate capital flight from t
       document.addEventListener('click', function(e) {
         const target = e.target.closest('a');
         if (target && target.getAttribute('href') === '#newsletter') {
-          // Check if there's an inline form with id="newsletter" on this page
+          // If the user clicked the nav button or footer button, always open the modal
+          if (target.classList.contains('nav-subscribe') || target.classList.contains('btn-primary')) {
+            e.preventDefault();
+            openModal();
+            return;
+          }
+          
+          // Otherwise, if there is an inline form with id="newsletter" on this page, scroll to it
           const inlineForm = document.getElementById('newsletter');
           if (inlineForm) {
             // Let the browser handle the anchor scroll naturally

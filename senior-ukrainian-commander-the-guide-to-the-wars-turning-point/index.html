@@ -42,7 +42,7 @@
 <meta name="twitter:description" content="Read this Reuters exclusive senior Ukrainian commander guide to identify the war&#039;s turning point and gain strategic insights. Master the battlefield logic now." />
   <meta name="google-site-verification" content="hUe_seT-XN8e7n8DdWDa1DPVn42ochPv6Z25QENqyFQ" />
   
-  <link rel="stylesheet" href="/geopolitics/style.css?v=1780471118341" />
+  <link rel="stylesheet" href="/geopolitics/style.css?v=1780477990083" />
   <link rel="alternate" type="application/rss+xml" title="Quillmatick Geopolitics" href="https://quillmatick.github.io/geopolitics/feed.xml" />
   <script type="application/ld+json">
   {
@@ -805,11 +805,15 @@ The commander asks: "Can we take the hill?" The politician asks: "Will taking th
         } else {
           const data = await res.json();
           if (data.success) {
-            alert(data.message || 'Signed up successfully!');
+            submitBtn.textContent = '✓ You're in!';
+            submitBtn.style.background = 'var(--green)';
+            submitBtn.style.color = '#fff';
+            submitBtn.style.borderColor = 'var(--green)';
             emailInput.value = '';
-            if (window.__qmCloseSubscribeModal) window.__qmCloseSubscribeModal();
+            // Close modal after success (optional)
+            // if (window.__qmCloseSubscribeModal) setTimeout(window.__qmCloseSubscribeModal, 2000);
           } else {
-            alert(data.error || 'Failed to subscribe. Please try again.');
+            alert(data.message || 'Something went wrong. Please try again.');
           }
         }
       } catch (err) {
@@ -970,7 +974,14 @@ The commander asks: "Can we take the hill?" The politician asks: "Will taking th
       document.addEventListener('click', function(e) {
         const target = e.target.closest('a');
         if (target && target.getAttribute('href') === '#newsletter') {
-          // Check if there's an inline form with id="newsletter" on this page
+          // If the user clicked the nav button or footer button, always open the modal
+          if (target.classList.contains('nav-subscribe') || target.classList.contains('btn-primary')) {
+            e.preventDefault();
+            openModal();
+            return;
+          }
+          
+          // Otherwise, if there is an inline form with id="newsletter" on this page, scroll to it
           const inlineForm = document.getElementById('newsletter');
           if (inlineForm) {
             // Let the browser handle the anchor scroll naturally
