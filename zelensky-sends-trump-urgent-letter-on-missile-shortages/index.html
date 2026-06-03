@@ -42,7 +42,7 @@
 <meta name="twitter:description" content="Zelensky sends Trump an urgent letter regarding missile shortages. Learn how this plea impacts war strategy to stay informed on global security. Read more now." />
   <meta name="google-site-verification" content="hUe_seT-XN8e7n8DdWDa1DPVn42ochPv6Z25QENqyFQ" />
   
-  <link rel="stylesheet" href="/geopolitics/style.css?v=1780468927455" />
+  <link rel="stylesheet" href="/geopolitics/style.css?v=1780469912232" />
   <link rel="alternate" type="application/rss+xml" title="Quillmatick Geopolitics" href="https://quillmatick.github.io/geopolitics/feed.xml" />
   <script type="application/ld+json">
   {
@@ -729,8 +729,21 @@ It turns "allied obligation" into "strategic partnership." Aid becomes a bargain
   <!-- Search autocomplete & dropdown logic -->
   <script>
     (function() {
-      const apiBase = atob('aHR0cDovL2xvY2FsaG9zdDo0MDAw');
+      const basePath = '/geopolitics';
       const forms = document.querySelectorAll('.search-form');
+
+      let searchIndex = null;
+      async function getSearchIndex() {
+        if (searchIndex) return searchIndex;
+        try {
+          const res = await fetch(basePath + '/search-index.json');
+          searchIndex = await res.json();
+          return searchIndex;
+        } catch (e) {
+          console.error('Failed to load search index for autocomplete:', e);
+          return [];
+        }
+      }
 
       forms.forEach(form => {
         const input = form.querySelector('input[name="q"]');
@@ -768,13 +781,20 @@ It turns "allied obligation" into "strategic partnership." Aid becomes a bargain
           
           debounceTimeout = setTimeout(async function() {
             try {
-              const res = await fetch(apiBase + '/api/dashboard/public/search?q=' + encodeURIComponent(val));
-              const data = await res.json();
+              const index = await getSearchIndex();
+              const query = val.toLowerCase();
+              
+              const matches = index.filter(post => {
+                return (post.title && post.title.toLowerCase().includes(query)) ||
+                       (post.meta_description && post.meta_description.toLowerCase().includes(query)) ||
+                       (post.content_md && post.content_md.toLowerCase().includes(query)) ||
+                       (post.tags && post.tags.toLowerCase().includes(query));
+              });
               
               if (!dropdown) return;
               
-              if (data.data && data.data.length > 0) {
-                dropdown.innerHTML = data.data.slice(0, 5).map(post => {
+              if (matches.length > 0) {
+                dropdown.innerHTML = matches.slice(0, 5).map(post => {
                   const readTime = Math.ceil((post.word_count || 1000) / 250);
                   const cat = post.category || 'tech';
                   const catPath = cat === 'geopolitics' ? '/geopolitics' : '/tech';

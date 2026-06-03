@@ -30,7 +30,7 @@
     <meta property="og:title" content="Terms of Service | Quillmatick Geopolitics" />
     <meta property="og:description" content="Terms of Service for Quillmatick Geopolitics" />
     <meta property="og:type" content="website" />
-    <link rel="stylesheet" href="/geopolitics/style.css?v=1780468973101" />
+    <link rel="stylesheet" href="/geopolitics/style.css?v=1780469956515" />
     </head><body>
       
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -333,8 +333,21 @@
   <!-- Search autocomplete & dropdown logic -->
   <script>
     (function() {
-      const apiBase = atob('aHR0cDovL2xvY2FsaG9zdDo0MDAw');
+      const basePath = '/geopolitics';
       const forms = document.querySelectorAll('.search-form');
+
+      let searchIndex = null;
+      async function getSearchIndex() {
+        if (searchIndex) return searchIndex;
+        try {
+          const res = await fetch(basePath + '/search-index.json');
+          searchIndex = await res.json();
+          return searchIndex;
+        } catch (e) {
+          console.error('Failed to load search index for autocomplete:', e);
+          return [];
+        }
+      }
 
       forms.forEach(form => {
         const input = form.querySelector('input[name="q"]');
@@ -372,13 +385,20 @@
           
           debounceTimeout = setTimeout(async function() {
             try {
-              const res = await fetch(apiBase + '/api/dashboard/public/search?q=' + encodeURIComponent(val));
-              const data = await res.json();
+              const index = await getSearchIndex();
+              const query = val.toLowerCase();
+              
+              const matches = index.filter(post => {
+                return (post.title && post.title.toLowerCase().includes(query)) ||
+                       (post.meta_description && post.meta_description.toLowerCase().includes(query)) ||
+                       (post.content_md && post.content_md.toLowerCase().includes(query)) ||
+                       (post.tags && post.tags.toLowerCase().includes(query));
+              });
               
               if (!dropdown) return;
               
-              if (data.data && data.data.length > 0) {
-                dropdown.innerHTML = data.data.slice(0, 5).map(post => {
+              if (matches.length > 0) {
+                dropdown.innerHTML = matches.slice(0, 5).map(post => {
                   const readTime = Math.ceil((post.word_count || 1000) / 250);
                   const cat = post.category || 'tech';
                   const catPath = cat === 'geopolitics' ? '/geopolitics' : '/tech';
