@@ -11,9 +11,9 @@
   --border-hi:   rgba(255,255,255,0.22);
 
   --ink:         #f0eee8;
-  --ink2:        #a8a5a0;
-  --ink3:        #62605c;
-  --ink4:        #3a3835;
+  --ink2:        #c5c2bc;
+  --ink3:        #9e9b96;
+  --ink4:        #6c6a66;
 
   --accent:      #7c5cfc;
   --accent-dim:  rgba(124,92,252,0.15);
@@ -62,9 +62,9 @@ html[data-theme="light"] {
   --border-hi:   rgba(0,0,0,0.22);
   
   --ink:         #1a1917;
-  --ink2:        #4a4844;
-  --ink3:        #8a8780;
-  --ink4:        #b0ada6;
+  --ink2:        #3a3835;
+  --ink3:        #62605c;
+  --ink4:        #8a8780;
   
   --accent:      #5a3fd4;
   --accent-dim:  rgba(90,63,212,0.1);
