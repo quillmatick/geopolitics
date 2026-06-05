@@ -37,7 +37,7 @@
 <meta name="author" content="Quillmatick Staff" />
   <meta name="google-site-verification" content="hUe_seT-XN8e7n8DdWDa1DPVn42ochPv6Z25QENqyFQ" />
   
-  <link rel="stylesheet" href="/geopolitics/style.css?v=1780589085490" />
+  <link rel="stylesheet" href="/geopolitics/style.css?v=1780644601711" />
   <link rel="alternate" type="application/rss+xml" title="Quillmatick Geopolitics" href="https://quillmatick.github.io/geopolitics/feed.xml" />
   <script type="application/ld+json">
   {
@@ -803,7 +803,7 @@ Yes. Only the most capitalized institutions can afford the "kinetic shield," ins
 
         const data = await res.json();
         if (res.ok && (data.success || !data.error)) {
-          submitBtn.textContent = '✓ You're in!';
+          submitBtn.textContent = "✓ You're in!";
           const originalBg = submitBtn.style.background;
           const originalColor = submitBtn.style.color;
           const originalBorder = submitBtn.style.borderColor;
@@ -870,6 +870,7 @@ Yes. Only the most capitalized institutions can afford the "kinetic shield," ins
         
         const dropdown = document.createElement('div');
         dropdown.className = 'search-dropdown';
+        dropdown.setAttribute('aria-live', 'polite');
         form.appendChild(dropdown);
         
         let debounceTimeout = null;

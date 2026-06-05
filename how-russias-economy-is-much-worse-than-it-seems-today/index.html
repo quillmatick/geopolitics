@@ -37,7 +37,7 @@
 <meta name="author" content="Quillmatick Staff" />
   <meta name="google-site-verification" content="hUe_seT-XN8e7n8DdWDa1DPVn42ochPv6Z25QENqyFQ" />
   
-  <link rel="stylesheet" href="/geopolitics/style.css?v=1780589084812" />
+  <link rel="stylesheet" href="/geopolitics/style.css?v=1780644602499" />
   <link rel="alternate" type="application/rss+xml" title="Quillmatick Geopolitics" href="https://quillmatick.github.io/geopolitics/feed.xml" />
   <script type="application/ld+json">
   {
@@ -804,7 +804,7 @@ With millions of men dead, wounded, or in exile, and a plummeting birth rate, Ru
 
         const data = await res.json();
         if (res.ok && (data.success || !data.error)) {
-          submitBtn.textContent = '✓ You're in!';
+          submitBtn.textContent = "✓ You're in!";
           const originalBg = submitBtn.style.background;
           const originalColor = submitBtn.style.color;
           const originalBorder = submitBtn.style.borderColor;
@@ -871,6 +871,7 @@ With millions of men dead, wounded, or in exile, and a plummeting birth rate, Ru
         
         const dropdown = document.createElement('div');
         dropdown.className = 'search-dropdown';
+        dropdown.setAttribute('aria-live', 'polite');
         form.appendChild(dropdown);
         
         let debounceTimeout = null;
