@@ -25,7 +25,7 @@
   <meta property="og:title" content="Quillmatick Geopolitics - Page 2" />
   <meta property="og:description" content="Latest articles on geopolitics and international relations. Page 2" />
   <meta property="og:type" content="website" />
-  <link rel="stylesheet" href="/geopolitics/style.css?v=1780672024910" />
+  <link rel="stylesheet" href="/geopolitics/style.css?v=1780677128613" />
   <link rel="canonical" href="https://quillmatick.github.io/geopolitics/page/2" />
 </head>
 <body>
@@ -840,6 +840,35 @@
           showExitModal();
         }
         lastScroll = currentScroll;
+      });
+    })();
+  </script>
+
+  <!-- Dynamic Newsletter Stats script -->
+  <script>
+    (function() {
+      // Wait for DOM to be ready
+      document.addEventListener("DOMContentLoaded", async function() {
+        const readersEl = document.getElementById('qm-stat-readers');
+        const openRateEl = document.getElementById('qm-stat-openrate');
+        
+        if (!readersEl && !openRateEl) return;
+
+        try {
+          const targetUrl = atob('aHR0cHM6Ly90aGlua3Mtcm9sbGVkLXNlYXJjaGVkLXJlYWR5LnRyeWNsb3VkZmxhcmUuY29t') + '/api/analytics/newsletter-stats';
+          const res = await fetch(targetUrl, { mode: 'cors' });
+          if (!res.ok) return;
+
+          const data = await res.json();
+          if (data.readers && readersEl) {
+            readersEl.textContent = data.readers;
+          }
+          if (data.openRate && openRateEl) {
+            openRateEl.textContent = data.openRate;
+          }
+        } catch (e) {
+          // Fail silently, keep the static fallback values
+        }
       });
     })();
   </script>
