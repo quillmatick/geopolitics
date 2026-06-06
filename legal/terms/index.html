@@ -30,7 +30,7 @@
     <meta property="og:title" content="Terms of Service | Quillmatick Geopolitics" />
     <meta property="og:description" content="Terms of Service for Quillmatick Geopolitics" />
     <meta property="og:type" content="website" />
-    <link rel="stylesheet" href="/geopolitics/style.css?v=1780725940353" />
+    <link rel="stylesheet" href="/geopolitics/style.css?v=1780756689635" />
     </head><body>
       
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -338,7 +338,7 @@
     (function() {
       if (navigator.doNotTrack === '1' || window.doNotTrack === '1') return;
       if (localStorage.getItem('qm-consent') === 'no') return;
-      const apiBase = atob('aHR0cHM6Ly90aGlua3Mtcm9sbGVkLXNlYXJjaGVkLXJlYWR5LnRyeWNsb3VkZmxhcmUuY29t');
+      const apiBase = atob('aHR0cHM6Ly9lc3Ryb2dlbi1lbmRhbmdlci1jb252ZW50Lm5ncm9rLWZyZWUuZGV2');
       let sessionId = null;
       let startTime = Date.now();
 
@@ -419,7 +419,7 @@
       submitBtn.textContent = 'Joining...';
       submitBtn.disabled = true;
 
-      const targetUrl = atob('aHR0cHM6Ly90aGlua3Mtcm9sbGVkLXNlYXJjaGVkLXJlYWR5LnRyeWNsb3VkZmxhcmUuY29t') + '/api/analytics/subscribe';
+      const targetUrl = atob('aHR0cHM6Ly9lc3Ryb2dlbi1lbmRhbmdlci1jb252ZW50Lm5ncm9rLWZyZWUuZGV2') + '/api/analytics/subscribe';
 
       // Helper to display error message inline
       const showError = (msg) => {
@@ -729,7 +729,7 @@
         if (!readersEl && !openRateEl) return;
 
         try {
-          const targetUrl = atob('aHR0cHM6Ly90aGlua3Mtcm9sbGVkLXNlYXJjaGVkLXJlYWR5LnRyeWNsb3VkZmxhcmUuY29t') + '/api/analytics/newsletter-stats';
+          const targetUrl = atob('aHR0cHM6Ly9lc3Ryb2dlbi1lbmRhbmdlci1jb252ZW50Lm5ncm9rLWZyZWUuZGV2') + '/api/analytics/newsletter-stats';
           const res = await fetch(targetUrl, { mode: 'cors' });
           if (!res.ok) return;
 
